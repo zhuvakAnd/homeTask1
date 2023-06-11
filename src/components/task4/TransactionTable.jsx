@@ -24,14 +24,5 @@ const TransactionTable = ({ data }) => {
     </table>
   );
 };
-    TransactionTable.propTypes = {
-    data: PropTypes.arrayOf(
-      PropTypes.shape({
-        type: PropTypes.string.isRequired,
-        amount: PropTypes.number.isRequired,
-        currency: PropTypes.string.isRequired,
-      })
-    ).isRequired,
-    };
 
 export default TransactionTable;
