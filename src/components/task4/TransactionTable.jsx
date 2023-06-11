@@ -1,0 +1,37 @@
+import React from "react";
+import { PropTypes } from "react";
+import style from "./DataTable.module.css";
+
+const TransactionTable = ({ data }) => {
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Currency</th>
+        </tr>
+      </thead>
+      <tbody>
+        {data.map((item, index) => (
+          <tr key={index}        >
+            <td>{item.type}</td>
+            <td>{item.amount}</td>
+            <td>{item.currency}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
+    TransactionTable.propTypes = {
+    data: PropTypes.arrayOf(
+      PropTypes.shape({
+        type: PropTypes.string.isRequired,
+        amount: PropTypes.number.isRequired,
+        currency: PropTypes.string.isRequired,
+      })
+    ).isRequired,
+    };
+
+export default TransactionTable;
